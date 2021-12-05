@@ -35,15 +35,15 @@ pub mod puzzle_two {
         for line in lines {
              numbers.push(line.trim().parse().expect("Line was not a number"));
         }
-        let mut slidingAverages: Vec<i32> = Vec::new();
+        let mut sliding_averages: Vec<i32> = Vec::new();
         for i in 0..numbers.len()-2 {
-            slidingAverages.push(numbers[i] + numbers[i+1] + numbers[i+2])
+            sliding_averages.push(numbers[i] + numbers[i+1] + numbers[i+2])
         }
 
         let mut acc = 0;
         let mut before = i32::MAX;
 
-        for num in slidingAverages {
+        for num in sliding_averages {
             if num > before {acc+=1};
             before = num;
         }
